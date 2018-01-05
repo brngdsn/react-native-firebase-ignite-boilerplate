@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import autoBind from 'react-autobind'
 import { ScrollView, Text, Image, View } from 'react-native'
-// import firebase from 'react-native-firebase';
+import firebase from 'react-native-firebase';
 import { Button, FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
 import { Images } from '../Themes'
@@ -14,6 +14,7 @@ export default class LaunchScreen extends Component {
     super(props)
     autoBind(this)
     this.state = {
+      user: {},
       busy: false,
       username: null,
       password: null,
@@ -33,32 +34,34 @@ export default class LaunchScreen extends Component {
     })
   }
   async onLogin () {
-    // const { username, password } = this.state
-    // this.setState({
-    //   busy: true
-    // })
-    // const user = await firebase.auth().signInWithEmailAndPassword(username, password)
-    // if (!user) {
-    //   this.setState({
-    //     usernameError: true,
-    //     passwordError: true
-    //   })
-    // } else {
-    //   this.setState({
-    //     user
-    //   })
-    //   this.setState({
-    //     usernameError: false,
-    //     passwordError: false
-    //   })
-    // }
-    // this.setState({
-    //   busy: false
-    // })
+    const { username, password } = this.state
+    this.setState({
+      busy: true
+    })
+    const user = await firebase.auth().signInWithEmailAndPassword(username, password)
+    if (!user) {
+      this.setState({
+        busy: false,
+        usernameError: true,
+        passwordError: true
+      })
+    } else {
+      this.setState({
+        busy: false,
+        loggedIn: true,
+        user: user,
+        usernameError: false,
+        passwordError: false
+      })
+      this.props.navigation.navigate('UserScreen')
+    }
+    this.setState({
+      busy: false
+    })
   }
   render () {
-    const { onUsername, onPassword, onLogin, busy } = this
-    const { usernameError, passwordError } = this.state
+    const { onUsername, onPassword, onLogin } = this
+    const { usernameError, passwordError, busy } = this.state
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
