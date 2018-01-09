@@ -1,3 +1,9 @@
+# react-native-firebase-ignite-boilerplate
+
+Go ahead and `yarn global add ignite-cli` which will grab all the `react-native` and `xcode` jazz you'll need (note that you'll need to get `react-native` from `ignite-cli` or else chances are you're on `npm@5` which is incompatible otherwise with `react-native`). Then you'll need to `cd ios/ && pod install` which means you'll also need `cocoapods` something you can get by `sudo gem install cocoapods` (which means you'll also need `gem`) (for more info on `pod` here https://guides.cocoapods.org/using/getting-started.html). Once you've acquired all the binary dependencies you can just `react-native run-ios` to boot up the emulator and run the app on iPhone. Note that `firebase` binaries are not hooked up to android so the native android app will not work right now.
+
+You can login with username `braun@todo.com` and password `braunbraun`.
+
 # React Native Firebase Starter<a href="https://rnfirebase.io"><img align="left" src="http://i.imgur.com/01XQL0x.png"></a>
 
 [![Backers on Open Collective](https://opencollective.com/react-native-firebase/backers/badge.svg)](#backers)
