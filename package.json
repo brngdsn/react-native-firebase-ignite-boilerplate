@@ -1,6 +1,6 @@
 {
-  "name": "RNFirebaseStarter",
-  "version": "0.1.0",
+  "name": "react-native-firebase-ignite-boilerplate",
+  "version": "0.2.0",
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
