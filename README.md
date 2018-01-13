@@ -4,6 +4,10 @@ Go ahead and `yarn global add ignite-cli` which will grab all the `react-native`
 
 You can login with username `braun@todo.com` and password `braunbraun`.
 
+# Dev
+
+Use `watchman watch-del-all && react-native start --reset-cache` and `react-native run-ios`.
+
 # React Native Firebase Starter<a href="https://rnfirebase.io"><img align="left" src="http://i.imgur.com/01XQL0x.png"></a>
 
 [![Backers on Open Collective](https://opencollective.com/react-native-firebase/backers/badge.svg)](#backers)
